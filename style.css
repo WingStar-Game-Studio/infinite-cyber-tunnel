@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    overflow: hidden;
+}
+body {
+    overflow: hidden;
+    background: #077;
+    /* background-image: linear-gradient(0deg, rgba(0,119,119,1) 0%, rgba(0,177,160,1) 100%); */
+    background-image: linear-gradient(0deg, rgb(10, 10, 10) 0%, rgb(30, 30, 30) 100%);
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+}
+
+/* オーバーレイ / Overlay */
+#overlay {
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    background: #0006;
+    color: #fffc;
+    z-index: 5;
+}
+#overlay.disabled {
+    display: none
+}
+#overlay > p {
+    width: 100vw;
+    font-size: 40px;
+    text-align: center;
+}
+#overlay > p > span {
+    display: inline-block;
+    padding-right: 20px;
+    margin-right: 20px;
+    border-right: 1px solid #fff6;
+}
+
+/* フッターと音源 / Header and audio source */
+#header,
+#media {
+    /* ページ左に固定 / Stick to the page left */
+    position: fixed;
+    left: 0;
+
+    /* 背景色と文字色 / Background and text color */
+    background: #000c;
+    color: #fff;
+
+    z-index: 1;
+}
+
+/* フッター / Footer */
+#header {
+    /* 上寄せ / Top-aligned */
+    top: 10px;
+
+    /* 少し余裕を持たせる / Box with a small padding */
+    padding: 10px 16px;
+
+    /* フォントサイズ小さめ、太め / Small but bold typography */
+    font-size: 10.5px;
+    font-weight: bold;
+
+    /* 子要素を横に並べて配置 / Align child content to the right */
+    display: flex;
+
+    /* 子要素は縦に中央揃え / Vertically middle-aligned */
+    align-items: center;
+
+    z-index: 3;
+}
+
+/* 再生ボタン / Play button */
+#control {
+    font-size: 21px;
+    padding-right: 10px;
+    border-right: 1px solid #fff9;
+    z-index: 4;
+}
+#control.disabled {
+    display: none;
+}
+#control a {
+    color: #aff;
+    text-decoration: none;
+}
+#control a.disabled {
+    opacity: 0.3;
+}
+#control a:hover {
+    color: #dff;
+}
+
+/* アーティストと楽曲の情報 / Artist and song info */
+#meta {
+    padding-left: 10px;
+}
+#meta span {
+    font-weight: normal;
+}
+
+/* 音源 / Audio source */
+#media {
+    /* 下寄せ / Bottom-aligned */
+    bottom: 10px;
+    z-index: 2;
+}
+
+#view {
+    width: 100%;
+    height: 100%;
+    /*
+    position: absolute;
+    */
+    position: relative;
+    z-index: 1;
+    top: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+#view canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
